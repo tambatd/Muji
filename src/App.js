@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import logo from './logo_muji_b.png';
 import './App.css';
+import bgm from "./muji_bgm.mp3"
+import Books from "./book.js"
 
 function App() {
+  function play_sound() {
+    console.log('You clicked play.');
+    let audio = new Audio(bgm);
+    audio.play();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ 
+   <div className="App">
+       <div className="red">
+         <img src={logo}></img>
+       </div>
+    
+     <div className="bg">
+      <button onClick={play_sound}>play</button>
+      <Books></Books>
+     </div>
     </div>
   );
 }
